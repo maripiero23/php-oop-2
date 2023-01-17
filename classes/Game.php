@@ -8,7 +8,7 @@ class Giochi extends Prodotti{
 
     function __construct($_description, $_brand, $_price, $_category)
     {
-        $this->setCategory($_category)
+        $this->setCategory($_category);
         
     }
 
