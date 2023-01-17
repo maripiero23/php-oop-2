@@ -1,33 +1,42 @@
 <?php
-require_once __DIR__ . "/Prodotto.php";
+require_once __DIR__ . "/Product.php";
+require_once __DIR__ . "/Category.php";
 
 
 
-class Giochi extends Prodotti{
-    protected $category;
 
-    function __construct($_description, $_brand, $_price, $_category)
+class Game extends Product{
+    protected $genre;
+    protected $materials = [] ;
+
+
+    function __construct($_name, $_price, Category $_category, $_materials)
     {
-        $this->setCategory($_category);
+        parent::__construct($_name, $_price, $_category);
+        $this->setMaterials($_materials);
+        
         
     }
 
+    
+
+
     /**
-     * Get the value of category
+     * Get the value of materials
      */ 
-    public function getCategory()
+    public function getMaterials()
     {
-        return $this->category;
+        return $this->materials;
     }
 
     /**
-     * Set the value of category
+     * Set the value of materials
      *
      * @return  self
      */ 
-    public function setCategory($category)
+    public function setMaterials($materials)
     {
-        $this->category = $category;
+        $this->materials = $materials;
 
         return $this;
     }

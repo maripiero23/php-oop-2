@@ -1,15 +1,19 @@
 <?php 
 
 require_once __DIR__ . "/Product.php";
+require_once __DIR__ ."/Category";
 
 class Food extends Product{
     private $calories;
-    private $ingredients;
+    private $ingredients = [];
 
 
-    function __construct()
-    {
+    function __construct($_name, $_price, $_category, $_calories)
+    {//invoco il constructore della classe padre
+        parent::__construct($_name, $_price, $_category);
         
+        $this->setCalories($_calories);
+
     }
 
 
